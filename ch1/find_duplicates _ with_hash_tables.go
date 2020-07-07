@@ -34,6 +34,8 @@ func findDuplicates(file *os.File) {
 		counts[input.Text()]++
 	}
 	for key, value := range counts {
-		fmt.Printf("%s:%d \n", key, value)
+		if value > 1 {
+			fmt.Printf("%s:%d \n", key, value)
+		}
 	}
 }
