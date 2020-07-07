@@ -7,7 +7,9 @@ import (
 )
 
 // Get lines of text from command line, put them into a hash table i.e a map and print out duplicates
-// Behold the power of hash tables!
+// If cmd line arg with filename is provided, read from that file line by line
+// Behold the power of hash tables and O(1) lookup!
+
 func main() {
 	if len(os.Args) < 2 {
 		findDuplicates(os.Stdin)
@@ -31,7 +33,6 @@ func findDuplicates(file *os.File) {
 		}
 		counts[input.Text()]++
 	}
-	//fmt.Println(myMap)
 	for key, value := range counts {
 		fmt.Printf("%s:%d \n", key, value)
 	}
