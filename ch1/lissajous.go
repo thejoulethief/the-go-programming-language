@@ -35,7 +35,7 @@ func lissajous(out io.Writer) {
 		size     = 500   // canvas res (size, size)
 		nframes  = 512   // number of animation frames
 		delay    = 1     // delay between frames in 10ms unit
-		freqMult = 2
+		freqMult = 2     // change pattern
 	)
 	freq := rand.Float64() * freqMult
 	anim := gif.GIF{LoopCount: nframes}
